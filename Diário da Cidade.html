@@ -13,7 +13,7 @@
         
         <!-- Linha do Cabeçalho -->
         <tr>
-            <td align="center" bgcolor="" height="100px">
+            <td align="center" bgcolor="blue" height="100px">
                     <h1>DIÁRIO DA CIDADE</h1>
                     <p><i>Sua cidade, sua voz.</i></p>
             </td>
@@ -34,20 +34,49 @@
                             <br>
 
                             <label><b>E-mail:</b></label><br>
-                            <input type="email" size="30"><br><br>
+                            <input type="email" id="email" size="30"><br><br>
 
                             <label><b>Senha:</b></label><br>
-                            <input type="password" size="30"><br><br>
+                            <input type="password" id="senha" size="30"><br><br>
 
-                            
-                            <button onclick="prompt('Digite a senha:') === '1234' ? window.location.href = 'Principal.html' : alert('Incorreto')">Entrar</button>
+
+                            <a href="Principal.html"></a>
+
+                            <!-- BOTÃO LOGIN -->
+                            <button onclick="
+
+                            let email = document.getElementById('email').value;
+                            let senha = document.getElementById('senha').value;
+
+                            let emailSalvo = localStorage.getItem('email');
+                            let senhaSalva = localStorage.getItem('senha');
+
+                            if(email === emailSalvo && senha === senhaSalva){
+
+                                window.location.href = 'Principal.html';
+
+                            }else{
+
+                                alert('E-mail ou senha incorretos');
+
+                            }
+
+                            ">
+                            Entrar
+                            </button>
+
                             <br><br>
 
                             <hr> <!-- Linha horizontal para separar -->
                             
                             <p>Ainda não tem acesso?</p>
-                            <a href="cadastrar.html">
-                                <button>Criar uma conta</button>
+
+                            <!-- BOTÃO CADASTRO -->
+                            <button onclick="window.location.href='cadastrar.html'">
+                                Cadastrar
+                            </button>
+
+
                             </a>
                         </td>
                     </tr>
